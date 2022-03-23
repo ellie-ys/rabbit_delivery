@@ -6,8 +6,6 @@ BASE_DIR = os.path.dirname(__file__)
 
 #rabbit.db
 SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:'+db_password+'@localhost:3306/rabbit?charset=utf8'
-SQLALCHEMY_TRACK_MODIFICATIONS = False
-
 
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 # 메모리사용량
