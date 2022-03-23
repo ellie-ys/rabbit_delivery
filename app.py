@@ -1,6 +1,8 @@
 from flask import Flask
 from db_connect import db
 import config
+from admin import admin_password
+
 
 def create_app():
     app = Flask(__name__)
@@ -13,10 +15,10 @@ def create_app():
     from views import main_view
     app.register_blueprint(main_view.bp)
 
-    app.secret_key = "seeeeeeeeeeeecret"
+    app.secret_key = admin_password
     app.config['SESSION_TYPE'] = 'filesystem'
 
     return app
 
 if __name__ == "__main__":
-    create_app().run(debug=True, port=1234)
+    create_app().run(debug=True, port=1234) #배포할땐 debug true 지우기
